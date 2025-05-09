@@ -255,3 +255,4 @@ video{
     transition: width 1.5s ease-out;
     width: 0; /* Inicia en 0 para la animación */
 }
+
