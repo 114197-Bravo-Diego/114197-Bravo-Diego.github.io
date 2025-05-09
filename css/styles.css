@@ -82,12 +82,15 @@ video{
 .iconos img:hover {
     transform: scale(1.2);
 }
-.form{
+.form {
     max-width: 600px;
+    margin: 0 auto; /* Centrar el formulario */
     align-items: center;
-    height: 100vh;
+    height: auto; /* Cambiar de 100vh a auto */
+    min-height: 70vh; /* Establecer una altura mínima */
     position: relative;
     z-index: 2;
+    padding-bottom: 20px; /* Añadir espacio en la parte inferior */
 }
 .formCaja{
     background-color: darkcyan;
@@ -103,17 +106,30 @@ video{
     font-size: large;
     opacity: 0.8;
 }
+.form .btn-primary {
+    background-color: darkcyan !important; /* Color que coincide con formCaja */
+    border-color: darkcyan !important;
+    font-family: 'Courier New', monospace;
+    font-size: large;
+    transition: all 0.3s ease;
+}
 
-#legenda{
+.form .btn-primary:hover {
+    background-color: #006666 !important; /* Un poco más oscuro al pasar el ratón */
+    transform: scale(1.05);
+}
+
+#legenda {
     background-color: darkslategray;
     text-align: center;
     font-family: 'Courier New', monospace;
     font-size: x-large;
     color: aliceblue;
-    max-width: 200px;
+    width: 100%; /* Cambiar de max-width a width para que ocupe todo el ancho */
     opacity: 0.8;
     display: flex;
-    justify-items: center;
+    justify-content: center; /* Centrar el texto horizontalmente */
+    padding: 5px 0; /* Añadir un poco de espacio vertical */
 }
 
 /* Estilos para el juego */
@@ -144,19 +160,19 @@ video{
     transform: scale(1.05);
 }
 
-/* barra de habilidades*/
-
-#body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f9f9f9;
+/* barra de habilidades */
+.skills-container {
+    position: relative;
+    z-index: 2;
     padding: 40px;
     max-width: 600px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 #h2 {
     color: bisque;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .skill {
@@ -184,6 +200,58 @@ video{
     line-height: 20px;
     border-radius: 20px;
     background: linear-gradient(90deg, #00796b, #004d66);
-    width: 0;
+}
+/* Estilos para la sección de habilidades */
+.skills-section {
+    position: relative;
+    padding: 30px 0 60px 0; /* Reducir el padding superior */
+    margin-top: -40px; /* Mover hacia arriba para acercarlo al formulario */
+    z-index: 2;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.skills-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.skills-title {
+    color: #f0f8ff;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 28px;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+}
+
+.skill-name {
+    color: #f0f8ff;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.skill-bar {
+    background-color: #444;
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, darkcyan, #20b2aa); /* Cambiado a darkcyan para coincidir con el formulario */
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
     transition: width 1.5s ease-out;
+    width: 0; /* Inicia en 0 para la animación */
 }
